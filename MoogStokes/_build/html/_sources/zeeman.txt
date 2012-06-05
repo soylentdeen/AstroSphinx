@@ -1,0 +1,22 @@
+.. _guide:
+
+Zeeman Intensities
+==================
+
+Calculation of Zeeman Intensities
+---------------------------------
+
+Condon and Shortley (1967) give the following equations for calculating the relative intensities of Zeeman components:
+
+.. math::
+   <\alpha j m \| T \| \alpha j+1 m\pm 1> = \pm \frac{1}{2} \left(j\pm m+1\right)\left(j\pm m+2\right)
+
+In Procedural code, there are often large numbers of raw data variables visible to the main program.
+
+
++---+
+|   |
++---+
+
+.. :Authors:
+.. :Copyright:

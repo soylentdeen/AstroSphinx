@@ -1,0 +1,232 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Zeeman Intensities &mdash;  0.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title=" 0.1.0 documentation" href="../index.html" />
+    <link rel="next" title="Diagonal Element Lambda Operator" href="../Delo/delo.html" />
+    <link rel="prev" title="MoogStokes Problems" href="../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../Delo/delo.html" title="Diagonal Element Lambda Operator"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="MoogStokes Problems"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html"> 0.1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Zeeman Intensities</a><ul>
+<li><a class="reference internal" href="#calculation-of-zeeman-intensities">Calculation of Zeeman Intensities</a></li>
+<li><a class="reference internal" href="#case-a">Case A</a></li>
+<li><a class="reference internal" href="#case-b">Case B</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../index.html"
+                        title="previous chapter">MoogStokes Problems</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../Delo/delo.html"
+                        title="next chapter">Diagonal Element Lambda Operator</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/ZeemanIntensities/zeeman.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="zeeman-intensities">
+<span id="guide"></span><h1>Zeeman Intensities<a class="headerlink" href="#zeeman-intensities" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="calculation-of-zeeman-intensities">
+<h2>Calculation of Zeeman Intensities<a class="headerlink" href="#calculation-of-zeeman-intensities" title="Permalink to this headline">¶</a></h2>
+<p>Condon and Shortley (1967) give the following equations for calculating the relative intensities of Zeeman components:</p>
+<div class="math">
+<p><img src="../_images/math/847798e6b065c8e3e7e8c58df01fb52b8418aed5.png" alt="&lt;\alpha, J, M \| T \| \alpha, J+1, M\pm 1&gt;^2 &amp;= \frac{1}{4} \left(J\pm M+1\right)\left(J\pm M+2\right) \left(\bold{\hat{i}}\pm \bold{\hat{j}} \right)\\
+&lt;\alpha, J, M \| T \| \alpha, J+1, M&gt;^2 &amp;= \left(J+1\right)^2 - M^2 \bold{\hat{k}}\\
+&lt;\alpha, J, M \| T \| \alpha, J, M\pm 1&gt;^2 &amp;= \frac{1}{4} \left(J\mp M\right)\left(J\pm M+1\right) \left(\bold{\hat{i}}\pm \bold{\hat{j}} \right)\\
+&lt;\alpha, J, M \| T \| \alpha, J, M&gt;^2 &amp;= M^2 \bold{\hat{k}}\\
+&lt;\alpha, J, M \| T \| \alpha, J-1, M\pm 1&gt;^2 &amp;= \frac{1}{4} \left(J\mp M\right)\left(J\mp M-1\right) \left(\bold{\hat{i}}\pm \bold{\hat{j}} \right)\\
+&lt;\alpha, J, M \| T \| \alpha, J-1, M&gt;^2 &amp;= J^2 - M^2 \bold{\hat{k}}"/></p>
+</div></div>
+<div class="section" id="case-a">
+<h2>Case A<a class="headerlink" href="#case-a" title="Permalink to this headline">¶</a></h2>
+<p>My naive assumption is to divide up the opacity contained in the original (unsplit) line between the Zeeman components by adjusting
+their oscillator strengths accordingly, normalizing so that the sum of the oscillator strengths of all the Zeeman components equals
+the oscillator strength of the unsplit line.</p>
+<p>For example, consider the following spectral line: <img class="math" src="../_images/math/1b93019d70aa0baf9fd65215a49d8f024999a693.png" alt="\lambda=11991.568\AA"/>, Si, <img class="math" src="../_images/math/5b2a31b1b338a56e6f08c96eca463bc536c80261.png" alt="\log gf=-0.109"/>.  For this transition, the
+upper and lower states have total angular momentum numbers of <img class="math" src="../_images/math/ac6adb32fce0030d89d69ccd4545446aef1034ad.png" alt="J=0, J=1"/>, respectively.  The Zeeman effect will split the lower
+state into three sublevels (<img class="math" src="../_images/math/4f29cd5520036724bc4b3ce5e106b579664d405d.png" alt="m_j=-1,0,1"/>), while the upper state will remain a single level (<img class="math" src="../_images/math/959560bedafb77dfb09005e41c398afd420bddf1.png" alt="m_j=0"/>).  In the simplest of all
+configurations, the initial line splits into three Zeeman components (<img class="math" src="../_images/math/38b38a4911edfd4a247bf37fd25a80f45b5fbfb1.png" alt="\Delta m_j=-1,0,1"/>).  Calculating the relative intensities of
+the three components, the two sigma (<img class="math" src="../_images/math/9ed29491ef23a6b7ea9e9ae1415143285b12d694.png" alt="\Delta m_j = \pm 1"/>) components should have a relative
+intensity of <img class="math" src="../_images/math/8145f796b6830252feab3cc240fd0d7e87c25e30.png" alt="\frac{1}{4}\left(0+0+1\right)\left(0+0+2\right)=\frac{1}{2}"/>.  The Pi component (<img class="math" src="../_images/math/66d2e735548561e093e4a3b6d21a40516561eb01.png" alt="\Delta m_j = 0"/>) should have a
+relative intensity of <img class="math" src="../_images/math/d5480eb3f25fc862fe6aa5358512f2d9e935b8b1.png" alt="\left(0+1\right)^2 - 0^2=1"/>.</p>
+<p>I interpret this to mean that the <img class="math" src="../_images/math/f2ca003a7da0de4994b4733e203b74ff52d42553.png" alt="\pi"/> component is twice as strong as either of the <img class="math" src="../_images/math/fa35d9fc104207e09a712110ac81612c5b279a6c.png" alt="\sigma"/> components.  In order to
+reflect this, I adjust the oscillator strength of the <img class="math" src="../_images/math/f2ca003a7da0de4994b4733e203b74ff52d42553.png" alt="\pi"/> component to be <img class="math" src="../_images/math/baa8f355b3d9f9d9e6c4da7fd71a2064293e21cb.png" alt="\log gf=-0.410"/>, and the oscillator strength
+of each of the two <img class="math" src="../_images/math/fa35d9fc104207e09a712110ac81612c5b279a6c.png" alt="\sigma"/> components to be <img class="math" src="../_images/math/587400e2c8d4b86fd7c3efe75021381fd1cd5f7d.png" alt="\log gf=-0.711"/>.  This way of dividing up the oscillator strengths ensures
+that the <img class="math" src="../_images/math/f2ca003a7da0de4994b4733e203b74ff52d42553.png" alt="\pi"/> component is twice as strong as the <img class="math" src="../_images/math/fa35d9fc104207e09a712110ac81612c5b279a6c.png" alt="\sigma"/> components, and that the total opacity in the three lines
+is the same as the opacity in the unsplit line.</p>
+<p>However, when calculating the elements of the opacity matrix, this does not seem to asymptote to the correct value of the opacity at
+the limiting case of <img class="math" src="../_images/math/33535d13e10f27c6657f5795ecb46f5c415ad539.png" alt="B=0"/>:</p>
+<div class="math">
+<p><img src="../_images/math/de1f044d9d0c13010592d42104ae25c7fac34bb1.png" alt="\Phi_I &amp;= \frac{1}{2} \phi_p \sin^2 \gamma + \frac{1}{4}\left(\phi_r+\phi_b\right)\left(1+\cos^2\gamma\right)\\
+\Phi_Q &amp;= \frac{1}{2} \left(\phi_p-\frac{1}{2}\left(\phi_r+\phi_b\right)\right)\sin^2\gamma\cos 2\chi\\
+\Phi_U &amp;= \frac{1}{2} \left(\phi_p-\frac{1}{2}\left(\phi_r+\phi_b\right)\right)\sin^2\gamma\sin 2\chi\\
+\Phi_V &amp;= \frac{1}{2} \left(\phi_r-\phi_b\right)\cos \gamma\\
+\Psi_Q &amp;= \frac{1}{2} \left(\psi_p-\frac{1}{2}\left(\psi_r+\psi_b\right)\right)\sin^2\gamma\cos 2\chi\\
+\Psi_U &amp;= \frac{1}{2} \left(\psi_p-\frac{1}{2}\left(\psi_r+\psi_b\right)\right)\sin^2\gamma\sin 2\chi\\
+\Psi_V &amp;= \frac{1}{2} \left(\psi_r-\psi_b\right)\cos \gamma"/></p>
+</div><p>where <img class="math" src="../_images/math/8d8a2ffdaadd76299b609e0e04269f1bab31675d.png" alt="\phi_{p,b,r}"/> are the absorption profiles and <img class="math" src="../_images/math/a9ed8847fb1968626bf95690c20e1da9735296fd.png" alt="\psi_{p,b,r}"/> are the anomalous dispersion profiles for the unshifted
+<img class="math" src="../_images/math/f2ca003a7da0de4994b4733e203b74ff52d42553.png" alt="\pi"/> component, and blue/red-shifted <img class="math" src="../_images/math/fa35d9fc104207e09a712110ac81612c5b279a6c.png" alt="\sigma"/> components, and <img class="math" src="../_images/math/f7480c05d434f6cdf6f62838493512b63b949e09.png" alt="\gamma, \chi"/> are angles related to the magnetic field
+vector.</p>
+<p>In the limiting case where <img class="math" src="../_images/math/33535d13e10f27c6657f5795ecb46f5c415ad539.png" alt="B=0"/>, and <img class="math" src="../_images/math/85e5363c3006038453bd3b59267457d86e47923a.png" alt="\gamma=\chi=0"/>, we are looking at the center of a stellar disk of an unmagnetized star.
+Since <img class="math" src="../_images/math/33535d13e10f27c6657f5795ecb46f5c415ad539.png" alt="B=0"/>, the wavelength shift due to the Zeeman effect is zero, and all Zeeman components lie on top of each other, and the
+spectrum should be identical to the spectrum calculated by a scalar code (i.e. Moog).</p>
+<p>In Case A, the absorption and anomalous dispersion profiles differ for the different Zeeman components (i.e.
+<img class="math" src="../_images/math/a5bc819692c37cb8feaf3084747163ab3b75c9dc.png" alt="\phi_p=\frac{\phi_o}{2}, \phi_r=\phi_b=\frac{\phi_o}{4}, \psi_p=\frac{\psi_o}{2}, \psi_r=\psi_b=\frac{\psi_o}{4}"/>), so the elements
+of the opacity matrix become:</p>
+<div class="math">
+<p><img src="../_images/math/943946ed3f2df1919ceb4f564505992862a15f18.png" alt="\Phi_I &amp;= \frac{1}{2} \frac{\phi_o}{2} \sin^2\left(0\right) + \frac{1}{4}\left(\frac{\phi_o}{4}+\frac{\phi_o}{4}\right)\left(1+\cos^2\left(0\right)\right)\\
+       &amp;= \frac{1}{4} \phi_o 0 + \frac{1}{4}\left(\frac{\phi_o}{2}\right)\left(1+1\right)\\
+       &amp;= \frac{\phi_o}{4}\\
+\Phi_Q &amp;= \frac{1}{2} \left(\frac{\phi_o}{2}-\frac{1}{2}\left(\frac{\phi_o}{4}+\frac{\phi_o}{4}\right)\right)\sin^2\left(0\right)\cos\left(0\right)\\
+       &amp;= 0\\
+\Phi_U &amp;= \frac{1}{2} \left(\frac{\phi_o}{2}-\frac{1}{2}\left(\frac{\phi_o}{4}+\frac{\phi_o}{4}\right)\right)\sin^2\left(0\right)\sin\left(0\right)\\
+       &amp;= 0\\
+\Phi_V &amp;= \frac{1}{2}\left(\frac{\phi_o}{4}-\frac{\phi_o}{4}\right)\cos\left(0\right)\\
+       &amp;= 0\\
+\Psi_Q &amp;= \frac{1}{2} \left(\frac{\psi_o}{2}-\frac{1}{2}\left(\frac{\psi_o}{4}+\frac{\psi_o}{4}\right)\right)\sin^2\left(0\right)\cos\left(0\right)\\
+       &amp;= 0\\
+\Psi_U &amp;= \frac{1}{2} \left(\frac{\psi_o}{2}-\frac{1}{2}\left(\frac{\psi_o}{4}+\frac{\psi_o}{4}\right)\right)\sin^2\left(0\right)\sin\left(0\right)\\
+       &amp;= 0\\
+\Psi_V &amp;= \frac{1}{2}\left(\frac{\psi_o}{4}-\frac{\psi_o}{4}\right)\cos\left(0\right)\\
+       &amp;= 0\\"/></p>
+</div><p>All elements in the opacity matrix are zero, except for the <img class="math" src="../_images/math/d34d1d0bacb7bbeee2e75db8e3c62e159046b72e.png" alt="\Phi_I=\frac{\phi_o}{4}"/>, only a fourth of what I would expect it to be.</p>
+</div>
+<div class="section" id="case-b">
+<h2>Case B<a class="headerlink" href="#case-b" title="Permalink to this headline">¶</a></h2>
+<p>However, Synthmag and other polarized radiative transfer codes don&#8217;t seem to divide up the opacity this way.  Equation 11 in
+Rees et al. (1989) says that &#8220;the corresponding strength of this component is <img class="math" src="../_images/math/866dca1ee051c716dbc71ae31aa38271c8e22ca1.png" alt="S_{i_j}"/> where :</p>
+<div class="math">
+<p><img src="../_images/math/ff31ff2855ecb40b0a9b88faece7b55b276383ee.png" alt="\sum\limits_{i_j=1}^{N_j}S_{i_j} = 1"/></p>
+</div><p>for <img class="math" src="../_images/math/434b69d5973068fa9758c735bec3adae699e298f.png" alt="j=r,p,b"/>, where <img class="math" src="../_images/math/bc892676fc08d0ef21478d7ab2d907695ef106de.png" alt="r,b"/> correspond to the <img class="math" src="../_images/math/5c9c9fdc3a4a3b976995975db35274f8d08968d9.png" alt="\pm \sigma"/> components, and <img class="math" src="../_images/math/36f73fc1312ee0349b3f3a0f3bd9eb5504339011.png" alt="p"/> correspond to the <img class="math" src="../_images/math/f2ca003a7da0de4994b4733e203b74ff52d42553.png" alt="\pi"/>
+components.  If I&#8217;m interpreting this correctly, the normalization of oscillator strengths should be done three times (corresponding
+to <img class="math" src="../_images/math/70743af23d4b500c7d5b69e79e7f0467a1706eaa.png" alt="\Delta m_j = -1, 0, 1"/>).  In other words, the sum of oscillator strengths for all <img class="math" src="../_images/math/f2ca003a7da0de4994b4733e203b74ff52d42553.png" alt="\pi"/> components should equal the
+original oscillator strength for the unsplit line.  The sum of oscillator strengths for all <img class="math" src="../_images/math/13b67d433839dde7ddedbd52d7af18c3817c907c.png" alt="\sigma_+"/> components should also equal
+the original oscillator strength for the unsplit line.  Similarly, the sum of oscillator strengths for all <img class="math" src="../_images/math/d57f8ea9ffc7556bcb8a36a3b5d8dade2410fcd0.png" alt="\sigma_-"/> components
+should also equal the original oscillator strength for the unsplit line.  So, for the example described above, the oscillator strength for
+each of the Zeeman components of the Si <img class="math" src="../_images/math/1b93019d70aa0baf9fd65215a49d8f024999a693.png" alt="\lambda=11991.568\AA"/> line will be <img class="math" src="../_images/math/089155bbedd6eeca9c0e641cffac9cf4e3e918c9.png" alt="\log gf = -0.109"/>.</p>
+<p>While I don&#8217;t particularly understand the physical reason for this &#8220;normalization,&#8221; I can at least see how it fits into the
+calculations of the elements <img class="math" src="../_images/math/069b5be119fb3f9052797902cf1af842cfff1c85.png" alt="\left(\Phi_{I,Q,U,V},\Psi_{Q,U,V}\right)"/> of the opacity matrix:</p>
+<p>In Case B, the absorption and anomalous dispersion profiles for each Zeeman component are the same (i.e.
+<img class="math" src="../_images/math/49060848c3a18d3d5a169021690e37ef6a018910.png" alt="\phi_p=\phi_r=\phi_b=\phi_o, \psi_p=\psi_r=\psi_b`=\psi_o"/>), so the elements of the opacity matrix become:</p>
+<div class="math">
+<p><img src="../_images/math/cb16e100fe813da937443b4a3952d98fc79f6bcc.png" alt="\Phi_I &amp;= \frac{1}{2} \phi_o \sin^2\left(0\right) + \frac{1}{4}\left(\phi_o+\phi_o\right)\left(1+\cos^2\left(0\right)\right)\\
+       &amp;= \frac{1}{2} \phi_o 0 + \frac{1}{4}\left(2\phi_o\right)\left(1+1\right)\\
+       &amp;= \phi_o\\
+\Phi_Q &amp;= \frac{1}{2} \left(\phi_o-\frac{1}{2}\left(\phi_o+\phi_o\right)\right)\sin^2\left(0\right)\cos\left(0\right)\\
+       &amp;= 0\\
+\Phi_U &amp;= \frac{1}{2} \left(\phi_o-\frac{1}{2}\left(\phi_o+\phi_o\right)\right)\sin^2\left(0\right)\sin\left(0\right)\\
+       &amp;= 0\\
+\Phi_V &amp;= \frac{1}{2}\left(\phi_o-\phi_o\right)\cos\left(0\right)\\
+       &amp;= 0\\
+\Psi_Q &amp;= \frac{1}{2} \left(\psi_o-\frac{1}{2}\left(\psi_o+\psi_o\right)\right)\sin^2\left(0\right)\cos\left(0\right)\\
+       &amp;= 0\\
+\Psi_U &amp;= \frac{1}{2} \left(\psi_o-\frac{1}{2}\left(\psi_o+\psi_o\right)\right)\sin^2\left(0\right)\sin\left(0\right)\\
+       &amp;= 0\\
+\Psi_V &amp;= \frac{1}{2}\left(\psi_o-\psi_o\right)\cos\left(0\right)\\
+       &amp;= 0\\"/></p>
+</div><p>So, in the limit of a non-magnetic star, the only non-zero element in the opacity matrix is <img class="math" src="../_images/math/b504fef3d4f60e8007d556696eb3bbd1266f0a77.png" alt="\Phi_I=\phi_o"/>, which appears to approach
+the correct value.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../Delo/delo.html" title="Diagonal Element Lambda Operator"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="MoogStokes Problems"
+             >previous</a> |</li>
+        <li><a href="../index.html"> 0.1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright .
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
+    </div>
+  </body>
+</html>
