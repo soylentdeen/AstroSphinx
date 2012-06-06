@@ -33,16 +33,42 @@ incarnation).
 Polarized Radiative Transfer
 ----------------------------
 
+Unno (1956)
+^^^^^^^^^^^
 Unno (1956) first attacked the problem of radiative transfer through a magnetic 
 medium, calculating the propogation of the Stokes vectors through a magnetized
 atmosphere.  The Unno equations accounted for the absorption profiles due to the
 :math:`\sigma` and :math:`\pi` components and generalized the equation of
 radiative transfer to the four Stokes vectors.
 
+Rachovsky (1962)
+^^^^^^^^^^^^^^^^
 Rachovsky (1962) slightly modified the equations of Unno to include the
 magneto-optical effects (so-called anomalous dispersion) due to changes in the
-imaginary component of the index of refraction.  The full opacity matrix
-:math:`\kappa` is given by the following:
+imaginary component of the index of refraction.
+
+Degl'Innocenti (1976)
+^^^^^^^^^^^^^^^^^^^^^
+E. Landi Degl'Innocenti (1976) developed a fourth-order Runge-Kutta integration
+code (MALIP) to calculate the Stokes parameters profiles of magnetoactive
+Fraunhofer lines.  The derivatives of each of the Stokes parameters are given by
+the following equations:
+
+.. math::
+  \mu\frac{dI}{d\tau}&=\eta_0(I-B_T)+\eta_I(I-S)+\eta_QQ+\eta_U+\eta_VV\\
+  \mu\frac{dQ}{d\tau}&=\eta_Q(I-S)+(\eta_0+\eta_I)Q+\rho_VU-\rho_UV\\
+  \mu\frac{dU}{d\tau}&=\eta_U(I-S)-\rho_VQ+(\eta_0+\eta_I)U+\rho_QV\\
+  \mu\frac{dV}{d\tau}&=\eta_V(I-S)+\rho_VQ-\rho_QU+(\eta_0+\eta_I)V\\
+
+where:
+* :math:`\mu=\cos \gamma`, (where :math:`\gamma` is the angle between the
+line of sight and the normal to the stellar surface)
+* :math:`\tau` is the optical depth, counted at a particular reference
+  wavelength (:math:`\lambda_{ref}=500` nm) as a function of which
+  the model-atmosphere and the other physical quantities are specified
+* :math:`\eta_0=\frac{k_{\lambda_0}^{(c)}}{k_{\lambda_ref}^{(c)}}` is the ratio
+  between  
+The full opacity matrix :math:`\kappa` is given by the following:
 
 .. math::
   \kappa &= \kappa_c\vec{1} + \kappa_0\vec{\Phi}
