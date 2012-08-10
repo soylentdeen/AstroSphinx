@@ -9,7 +9,7 @@ This is a website dedicated to problems I'm having with MoogStokes
    :maxdepth: 1
 
    ZeemanIntensities/zeeman
-   Delo/delo
+   Delo/uncle
 
 +---+
 |   |

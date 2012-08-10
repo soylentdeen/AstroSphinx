@@ -55,19 +55,40 @@ Fraunhofer lines.  The derivatives of each of the Stokes parameters are given by
 the following equations:
 
 .. math::
-  \mu\frac{dI}{d\tau}&=\eta_0(I-B_T)+\eta_I(I-S)+\eta_QQ+\eta_U+\eta_VV\\
+  \mu\frac{dI}{d\tau}&=\eta_0(I-B_T)+\eta_I(I-S)+\eta_QQ+\eta_UU+\eta_VV\\
   \mu\frac{dQ}{d\tau}&=\eta_Q(I-S)+(\eta_0+\eta_I)Q+\rho_VU-\rho_UV\\
   \mu\frac{dU}{d\tau}&=\eta_U(I-S)-\rho_VQ+(\eta_0+\eta_I)U+\rho_QV\\
   \mu\frac{dV}{d\tau}&=\eta_V(I-S)+\rho_VQ-\rho_QU+(\eta_0+\eta_I)V\\
 
 where:
+
 * :math:`\mu=\cos \gamma`, (where :math:`\gamma` is the angle between the
-line of sight and the normal to the stellar surface)
+  line of sight and the normal to the stellar surface)
 * :math:`\tau` is the optical depth, counted at a particular reference
   wavelength (:math:`\lambda_{ref}=500` nm) as a function of which
   the model-atmosphere and the other physical quantities are specified
 * :math:`\eta_0=\frac{k_{\lambda_0}^{(c)}}{k_{\lambda_ref}^{(c)}}` is the ratio
-  between  
+  between the total continuous extinction coefficient at the line wavelength
+  :math:`k_{\lambda_0}^{(c)}`, and the same quantity at the reference
+  wavelength :math:`k_{\lambda_{ref}}^{(c)}`.
+* :math:`B_T` is the Planck function.
+* :math:`S` is the source function.
+* :math:`\eta_I=\frac{1}{2} \left( \eta_p \sin^2 \Psi + \frac{1}{2}
+  \left(\eta_b+\eta_r\right)\left(1+\cos^2\Psi\right)\right)`
+* :math:`\eta_Q=\frac{1}{2}\left(\eta_p-\frac{1}{2} \left(\eta_b+\eta_r\right)
+  \right)\sin^2\Psi\cos 2\phi`
+* :math:`\eta_U=\frac{1}{2}\left(\eta_p-\frac{1}{2} \left(\eta_b+\eta_r\right)
+  \right)\sin^2\Psi\sin 2\phi`
+* :math:`\eta_V=\frac{1}{2}\left(\eta_r-\eta_b\right)\cos \Psi`
+* :math:`\rho_Q=\frac{1}{2}\left(\rho_p-\frac{1}{2} \left(\rho_b+\rho_r\right)
+  \right)\sin^2\Psi\cos 2\phi`
+* :math:`\rho_U=\frac{1}{2}\left(\rho_p-\frac{1}{2} \left(\rho_b+\rho_r\right)
+  \right)\sin^2\Psi\sin 2\phi`
+* :math:`\rho_V=\frac{1}{2}\left(\rho_r-\rho_b\right)\cos \Psi`
+* :math:`\Psi` and :math:`\phi` are the angles specifiying the direction of the
+  magnetic field vector
+* :math:
+
 The full opacity matrix :math:`\kappa` is given by the following:
 
 .. math::
