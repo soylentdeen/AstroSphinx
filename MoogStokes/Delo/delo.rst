@@ -62,12 +62,15 @@ the following equations:
 
 where:
 * :math:`\mu=\cos \gamma`, (where :math:`\gamma` is the angle between the
-line of sight and the normal to the stellar surface)
+  line of sight and the normal to the stellar surface)
 * :math:`\tau` is the optical depth, counted at a particular reference
   wavelength (:math:`\lambda_{ref}=500` nm) as a function of which
   the model-atmosphere and the other physical quantities are specified
 * :math:`\eta_0=\frac{k_{\lambda_0}^{(c)}}{k_{\lambda_ref}^{(c)}}` is the ratio
-  between  
+  between the continuum opacities at the current wavelength :math:`\lambda_0`
+  and the reference wavelength of the model atmosphere :math:`\lambda_{ref}`.
+
+
 The full opacity matrix :math:`\kappa` is given by the following:
 
 .. math::
@@ -93,6 +96,18 @@ the Diagonal Element Lambda Operator method developed by Rees & Murphy (1989).
 
 Described in Rees & Murphy (1989), the DELO method works by 
 
+
+Current State of Affairs
+------------------------
+
+I have an algorithm which works using a Runge-Kutta integrator.  This produces
+the correct value for the non-magnetic case (as compared to the scalar Moog 
+code) don't know if it produces the correct answer when the magnetic field is
+turned on.  This will require me to synthesize an entire stellar disk.
+Synthesizing an entire grid with this algorithm will be time consuming to say
+the least.
+
+I have attempted to implement the DELO algorithm as described in 
 
 +---+
 |   |
